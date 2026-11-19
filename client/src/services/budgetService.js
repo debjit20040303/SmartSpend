@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:5000/api/budgets";
+
+const API_URL = "https://smartspend-yyhe.onrender.com/api/budgets";
 
 // =========================
 // GET BUDGETS
