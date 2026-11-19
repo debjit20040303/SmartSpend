@@ -1,10 +1,11 @@
+
 import axios from "axios";
 
 // =====================================================
-// API BASE URL
+// API BASE URL (RENDER BACKEND)
 // =====================================================
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://smartspend-yyhe.onrender.com/api";
 
 // =====================================================
 // AUTH HEADERS
@@ -25,9 +26,7 @@ const getAuthHeaders = () => {
 // EXPENSES
 // =====================================================
 
-// =====================================================
 // GET ALL EXPENSES
-// =====================================================
 
 export const getExpenses = async () => {
   try {
@@ -44,15 +43,12 @@ export const getExpenses = async () => {
     );
 
     throw new Error(
-      error.response?.data?.message ||
-        "Failed to fetch expenses"
+      error.response?.data?.message || "Failed to fetch expenses"
     );
   }
 };
 
-// =====================================================
 // ADD EXPENSE
-// =====================================================
 
 export const addExpense = async (expenseData) => {
   try {
@@ -70,20 +66,14 @@ export const addExpense = async (expenseData) => {
     );
 
     throw new Error(
-      error.response?.data?.message ||
-        "Failed to add expense"
+      error.response?.data?.message || "Failed to add expense"
     );
   }
 };
 
-// =====================================================
 // UPDATE EXPENSE
-// =====================================================
 
-export const updateExpense = async (
-  expenseId,
-  expenseData
-) => {
+export const updateExpense = async (expenseId, expenseData) => {
   try {
     const response = await axios.put(
       `${API_URL}/expenses/${expenseId}`,
@@ -99,15 +89,12 @@ export const updateExpense = async (
     );
 
     throw new Error(
-      error.response?.data?.message ||
-        "Failed to update expense"
+      error.response?.data?.message || "Failed to update expense"
     );
   }
 };
 
-// =====================================================
 // DELETE EXPENSE
-// =====================================================
 
 export const deleteExpense = async (expenseId) => {
   try {
@@ -124,8 +111,7 @@ export const deleteExpense = async (expenseId) => {
     );
 
     throw new Error(
-      error.response?.data?.message ||
-        "Failed to delete expense"
+      error.response?.data?.message || "Failed to delete expense"
     );
   }
 };
@@ -134,9 +120,7 @@ export const deleteExpense = async (expenseId) => {
 // FINANCIAL SETTINGS
 // =====================================================
 
-// =====================================================
 // GET FINANCIAL SETTINGS
-// =====================================================
 
 export const getFinancial = async () => {
   try {
@@ -159,13 +143,9 @@ export const getFinancial = async () => {
   }
 };
 
-// =====================================================
 // UPDATE FINANCIAL SETTINGS
-// =====================================================
 
-export const updateFinancial = async (
-  financialData
-) => {
+export const updateFinancial = async (financialData) => {
   try {
     const response = await axios.put(
       `${API_URL}/financial`,
@@ -187,15 +167,9 @@ export const updateFinancial = async (
   }
 };
 
-// =====================================================
 // SAVE FINANCIAL
-// =====================================================
-// Alias used by FinancialSettings.jsx
-// =====================================================
 
-export const saveFinancial = async (
-  financialData
-) => {
+export const saveFinancial = async (financialData) => {
   return updateFinancial(financialData);
 };
 
@@ -203,9 +177,7 @@ export const saveFinancial = async (
 // BUDGETS
 // =====================================================
 
-// =====================================================
 // GET BUDGETS
-// =====================================================
 
 export const getBudgets = async () => {
   try {
@@ -222,15 +194,12 @@ export const getBudgets = async () => {
     );
 
     throw new Error(
-      error.response?.data?.message ||
-        "Failed to fetch budgets"
+      error.response?.data?.message || "Failed to fetch budgets"
     );
   }
 };
 
-// =====================================================
 // ADD BUDGET
-// =====================================================
 
 export const addBudget = async (budgetData) => {
   try {
@@ -248,30 +217,20 @@ export const addBudget = async (budgetData) => {
     );
 
     throw new Error(
-      error.response?.data?.message ||
-        "Failed to add budget"
+      error.response?.data?.message || "Failed to add budget"
     );
   }
 };
 
-// =====================================================
 // SAVE BUDGET
-// =====================================================
-// Alias used by Budgets.jsx
-// =====================================================
 
 export const saveBudget = async (budgetData) => {
   return addBudget(budgetData);
 };
 
-// =====================================================
 // UPDATE BUDGET
-// =====================================================
 
-export const updateBudget = async (
-  budgetId,
-  budgetData
-) => {
+export const updateBudget = async (budgetId, budgetData) => {
   try {
     const response = await axios.put(
       `${API_URL}/budgets/${budgetId}`,
@@ -287,15 +246,12 @@ export const updateBudget = async (
     );
 
     throw new Error(
-      error.response?.data?.message ||
-        "Failed to update budget"
+      error.response?.data?.message || "Failed to update budget"
     );
   }
 };
 
-// =====================================================
 // DELETE BUDGET
-// =====================================================
 
 export const deleteBudget = async (budgetId) => {
   try {
@@ -312,8 +268,7 @@ export const deleteBudget = async (budgetId) => {
     );
 
     throw new Error(
-      error.response?.data?.message ||
-        "Failed to delete budget"
+      error.response?.data?.message || "Failed to delete budget"
     );
   }
 };
