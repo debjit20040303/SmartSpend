@@ -1,10 +1,10 @@
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://smartspend-yyhe.onrender.com/api";
 
 // =========================
 // REGISTER
 // =========================
 export const registerUser = async (userData) => {
-  const response = await fetch(`${API_URL}/register`, {
+  const response = await fetch(`${API_URL}/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,12 +21,11 @@ export const registerUser = async (userData) => {
   return data;
 };
 
-
 // =========================
 // LOGIN
 // =========================
 export const loginUser = async (userData) => {
-  const response = await fetch(`${API_URL}/login`, {
+  const response = await fetch(`${API_URL}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -43,7 +42,6 @@ export const loginUser = async (userData) => {
   return data;
 };
 
-
 // =========================
 // UPDATE FINANCIAL PROFILE
 // =========================
@@ -54,7 +52,7 @@ export const updateFinancialProfile = async (
   const token = localStorage.getItem("token");
 
   const response = await fetch(
-    "http://localhost:5000/api/profile/financial",
+    `${API_URL}/profile/financial`,
     {
       method: "PUT",
       headers: {
